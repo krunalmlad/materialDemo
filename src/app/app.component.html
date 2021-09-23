@@ -1,0 +1,21 @@
+<div style="width: 100%; background-color: bisque;padding: 25px;" >
+  <h1>Angular Material Demo</h1>
+
+  <mat-form-field >
+    <mat-label>User Name</mat-label>
+    <input type="text"
+    placeholder="Pick one"
+    aria-label="Number"
+    matInput
+    [formControl]="userControl"
+    [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filterUserOptions  | async" [value]="option">
+    {{option}}
+    </mat-option>
+</mat-autocomplete>
+  </mat-form-field>
+
+  <router-outlet></router-outlet>
+</div>
+
